@@ -8,5 +8,18 @@ for (let i = 0; i < SQUARES; i++) {
   const square = document.createElement("div");
   square.classList.add("square");
 
+  square.addEventListener("mouseover", () => setColor(square));
+  square.addEventListener("mouseout", () => removeColor(square));
+
   container.appendChild(square);
+}
+
+function setColor(el) {
+  const color = getRndomColor();
+  el.style.background = color;
+  el.style.boxShadow = ` 0 0 2px ${color}, 0 0 10px ${color}`;
+}
+
+function getRndomColor() {
+  return colors[Math.floor(Math.random() * colors.length)];
 }
