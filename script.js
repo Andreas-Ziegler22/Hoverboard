@@ -19,6 +19,10 @@ function setColor(el) {
   el.style.background = color;
   el.style.boxShadow = ` 0 0 2px ${color}, 0 0 10px ${color}`;
 }
+function removeColor(el) {
+  el.style.background = `#1d1d1d`;
+  el.style.boxShadow = `0 0 2px #000`;
+}
 
 function getRndomColor() {
   return colors[Math.floor(Math.random() * colors.length)];
